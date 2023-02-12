@@ -1,110 +1,254 @@
 .App {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.rocket {
+    background: url(/assets/3.webp) no-repeat;
+    background-size: contain;
+    width: 140px;
+    height: 140px;
+    cursor: grab;
+    will-change: transform;
+    user-select: none;
+    z-index: 1000;
+    position: absolute;
+    top: 30px;
+    left: 45%;
+    transform: translate(-45%);
+}
+
+.rocket:active {
+    cursor: grabbing;
+}
+
+.cube1 {
+    position: absolute;
+    top: 400px;
+    right: 100px;
+    width: 300px;
+    min-height: 300px;
+    background-color: rgba(55, 189, 219, 0.9);
+    -webkit-box-shadow: 0px 0px 250px 16px rgba(55, 189, 219, 1);
+    -moz-box-shadow: 0px 0px 250px 16px rgba(55, 189, 219, 1);
+    box-shadow: 0px 0px 250px 16px rgba(55, 189, 219, 1);
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cube2 {
+    position: absolute;
+    top: 600px;
+    left: 100px;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(242, 85, 161, 1);
+    -webkit-box-shadow: 0px 0px 250px 16px rgba(242, 85, 161, 1);
+    -moz-box-shadow: 0px 0px 250px 16px rgba(242, 85, 161, 1);
+    box-shadow: 0px 0px 250px 16px rgba(242, 85, 161, 1);
 }
 
 .header__container {
-  background-color: white;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  border-radius: 10px;
-  padding-bottom: 10px;
-  box-sizing: border-box;
+    background-color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.header__box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+}
+
+.contacts {
+    display: flex;
+    gap: 50px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.btns-menu {
+    z-index: 1000;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.contact-icon:hover {
+    transform: scale(1.2);
 }
 
 .header {
-  position: relative;
-  width: 100%;
-  height: 250px;
+    position: relative;
+    width: 100%;
 }
 
 .header:before {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(-99deg, #e81cff 0%, #40c9ff 98% );
-  transform: translate3d(0px, 17px, 0) scale(0.95);
-  filter: blur(22px);
-  opacity: var(0.71);
-  transition: opacity 0.3s;
-  border-radius: inherit;
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(-99deg, #e81cff 0%, #40c9ff 98%);
+    transform: translate3d(0px, 17px, 0) scale(0.95);
+    filter: blur(22px);
+    opacity: var(0.71);
+    transition: opacity 0.3s;
+    border-radius: inherit;
 }
 
 .header::after {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: inherit;
-  border-radius: inherit;
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: inherit;
+    border-radius: inherit;
 }
 
-
 .logo {
-  width: 200px;
-  height: 200px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    width: 200px;
+    height: 200px;
 }
 
 .title {
-  font-weight: 300;
+    text-align: center;
+    font-weight: 100;
 }
 
 .sub-title {
-  text-align: center;
-  font-weight: 300;
+    text-align: center;
+    font-weight: 200;
+}
+
+.sub-title__margin {
+    margin-bottom: 20px;
+}
+
+.step__label span {
+    font-weight: 200 !important;
 }
 
 .container {
-  margin: 50px auto;
-  max-width: 95%;
-  width: 100%;
-  padding: 20px;
-  box-sizing: border-box;
-  background: rgba( 255, 255, 255, 0.25 );
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 4px );
-  -webkit-backdrop-filter: blur( 4px );
-  border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
+    margin: 50px auto;
+    max-width: 95%;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 1px 1px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+}
+
+.container__no--glass {
+    margin: 50px auto;
+    max-width: 95%;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container--flex {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.container--flex-margin {
+    margin-top: 10px;
 }
 
 .body__item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.text {
+    font-weight: 200;
+    font-size: 16px;
+}
+
+.text--center {
+    text-align: center;
 }
 
 .text span {
-  height: 100%;
-  font-weight: 200;
+    height: 100%;
+    font-weight: 200;
+}
+
+.step {
+    font-weight: 200;
+    font-size: 16px;
 }
 
 .emoji {
-  font-size: 30px;
+    font-size: 30px;
 }
 
 .arrow {
-  width: 20px;
-  height: 20px;
+    width: 20px;
+    height: 20px;
 }
 
 .arrow-left {
-  transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 
 .review__text {
-  box-sizing: border-box;
-  padding: 20px 40px;
-  font-size: 16px;
-  font-weight: 200;
+    box-sizing: border-box;
+    padding: 20px 40px;
+    font-size: 16px;
+    font-weight: 200;
+}
+
+.container__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: .4em;
+    max-width: 360px;
+    height: 150px;
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 1px 1px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
